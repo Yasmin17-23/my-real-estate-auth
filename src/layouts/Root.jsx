@@ -5,9 +5,11 @@ import Footer from "../components/Shared/Footer/Footer";
 
 const Root = () => {
     return (
-        <div className="max-w-6xl mx-auto font-poppins">
+        <div>
             <Navbar></Navbar>
-            <Outlet></Outlet>
+            <div className="max-w-6xl mx-auto font-poppins">
+               <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );
