@@ -7,8 +7,6 @@ const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
 
-   
-
     const navLinks = <>
 
         <li><NavLink to="/">Home</NavLink></li>
@@ -49,17 +47,29 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user?.email ?
-                        <div className="flex justify-between items-center ">
-                            <div className="w-10 rounded-full mr-2">
-                                <img
-                                    alt="Tailwind CSS Navbar component"
-                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                            </div>
-                            
+                    user ?
+                        <div className="dropdown dropdown-end flex">
+                            <div className="flex justify-between items-center">
+                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img
+                                            alt="Tailwind CSS Navbar component"
+                                            src={user.photoURL} />
+                                    </div>
+                                </div>
+                                <ul
+                                    tabIndex={0}
+                                    className="menu menu-sm dropdown-content rounded-box 
+                                     mt-28 mr-6 w-48 p-2 ">
+                                    <li className=" ">
+                                        <a className="text-gray-600 ">
+                                           {user.displayName}  
+                                        </a>
+                                    </li>
+                                </ul>
                                 <button onClick={logOut}
-                                className="btn btn-primary">Sign Out</button>
-                            
+                                    className="btn btn-sm btn-primary">Sign Out</button>
+                            </div>
                         </div>
                         : <Link to="/login">
                             <button className="btn btn-primary">Login</button>

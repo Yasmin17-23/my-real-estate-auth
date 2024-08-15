@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
+import SocialMedia from "../../components/SocialMedia/SocialMedia";
+
 
 
 const Login = () => {
    const { signInUser } = useContext(AuthContext);
+   
 
    const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -61,7 +64,9 @@ const Login = () => {
                                 Regiter
                             </Link>
                         </p>
+
                     </form> 
+                  <SocialMedia></SocialMedia>
                 </div>
             </div>
         </div>
