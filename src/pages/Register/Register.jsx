@@ -11,22 +11,31 @@ const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        console.log(data)
+       const { email, password } = data;
+       createUser(email, password)
+       .then(result => {
+         console.log(result.user);
+          toast.success('Successfully Register');
+       })
+       .catch(error => {
+         console.error(error);
+         toast.warning(error.message);
+       })
     };
 
     const passwordValidation = (value) => {
-        if(value.length < 6){
-            return 'Password must be at least 6 characters or longer';
+        if (value.length < 6) {
+            return  toast.error('Password must be at least 6 characters or longer');
         }
-        else if(!/[A-Z]/.test(value)){
-            return 'Password must contain at least one uppercase letter';
+        else if (!/[A-Z]/.test(value)) {
+            return toast.error('Password must contain at least one uppercase letter');
         }
-        else if(!/[a-z]/.test(value)){
-            return 'Password must contain at least one lowercase letter';
+        else if (!/[a-z]/.test(value)) {
+            return toast.error('Password must contain at least one lowercase letter');
         }
         return true;
     };
-    
+
     return (
         <div className="hero min-h-screen mt-6">
             <div className="hero-content flex-col lg:flex-row-reverse">
@@ -44,17 +53,16 @@ const Register = () => {
                                 <span className="label-text">Name</span>
                             </label>
                             <input type="text" placeholder="Your Name" className="input input-bordered"
-                                {...register("name")} />
-                            {errors.name &&
-                                toast.error('This field is required')
-                            }
+                                {...register("name", { required: true })} />
+                            {errors.name && <span>This field is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="email" placeholder="Email" className="input input-bordered"
-                                {...register("email")} />
+                                {...register("email", { required: true })} />
+                            {errors.name && <span>This field is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -69,8 +77,9 @@ const Register = () => {
                             </label>
                             <input type="password" placeholder="password" className="input input-bordered"
                                 {...register("password", {
-                                    required: true, validate: passwordValidation})} />
-                                 {errors.password && <p>{errors.password.message}</p>}
+                                    required: true, validate: passwordValidation
+                                })} />
+                           
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
