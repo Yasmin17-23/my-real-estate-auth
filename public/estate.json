@@ -1,0 +1,111 @@
+[
+    {
+      "id": 1,
+      "image": "https://i.postimg.cc/mkRFtxMc/estate-img-1.jpg",
+      "estate_title": "Sunny Apartment",
+      "segment_name": "Apartments",
+      "description": "A spacious apartment with a beautiful view of the city skyline. The open floor plan allows natural light to flood in, creating a warm and inviting atmosphere. Ideal for families looking for a modern living experience in the heart of Dhaka.",
+      "price": "12000000 BDT",
+      "Status": "sale",
+      "Area": "1800 sq ft",
+      "location": "Dhaka, Bangladesh",
+      "facilities": ["living room", "gym", "rooftop garden"]
+    },
+    {
+      "id": 2,
+      "image": "https://i.postimg.cc/Z5crj0cn/estate-img-2.jpg",
+      "estate_title": "Modern Townhouse ",
+      "segment_name": "Townhouses",
+      "description": "This modern townhouse is situated in a peaceful neighborhood in Chittagong. With its contemporary design and spacious interiors, it offers the perfect blend of comfort and style. The property includes a private garden and a garage, making it an ideal choice for small families.",
+      "price": "8500000 BDT",
+      "Status": "sale",
+      "Area": "1500 sq ft",
+      "location": "Chittagong, Bangladesh",
+      "facilities": ["garage", "balcony", "garden"]
+    },
+    {
+      "id": 3,
+      "image": "https://i.postimg.cc/vm25FjCd/estate-img-3.jpg",
+      "estate_title": "Luxury Vacation Rental",
+      "segment_name": "Vacation Rentals",
+      "description": "Escape to this luxurious vacation rental in Sylhet, where you can enjoy top-notch amenities and a serene environment. The property features a private swimming pool, home theater, and spa, providing everything you need for a relaxing getaway.",
+      "price": "30000000 BDT",
+      "Status": "sale",
+      "Area": "3500 sq ft",
+      "location": "Sylhet, Bangladesh",
+      "facilities": ["swimming pool", "home theater", "spa"]
+    },
+    {
+      "id": 4,
+      "image": "https://i.postimg.cc/LXrfhPHC/estate-img-4.jpg",
+      "estate_title": "Cozy Senior Living Cottage ",
+      "segment_name": "Senior Living Communities",
+      "description": "This cozy cottage in Cox's Bazar is designed specifically for senior living, offering a peaceful retreat near the beach. Residents can enjoy beautiful sea views, walking paths, and access to a community center and library.",
+      "price": "5000000 BDT",
+      "Status": "rent",
+      "Area": "1200 sq ft",
+      "location": "Cox's Bazar, Bangladesh",
+      "facilities": ["walking paths", "community center", "library"]
+    },
+    {
+      "id": 5,
+      "image": "https://i.postimg.cc/FsX340C1/estate-img-5.jpg",
+      "estate_title": "Wonderful Student Housing ",
+      "segment_name": "Student Housing",
+      "description": "Affordable and secure, this student housing in Gulshan offers a perfect environment for academic success. With facilities like a study room, laundry service, and 24/7 security, it’s an excellent choice for students looking for convenience and safety.",
+      "price": "15000000 BDT",
+      "Status": "sale",
+      "Area": "2500 sq ft",
+      "location": "Gulshan, Dhaka, Bangladesh",
+      "facilities": ["study room", "laundry service", "24/7 security"]
+    },
+    {
+      "id": 6,
+      "image": "https://i.postimg.cc/wBMsV2M4/estate-img-6.jpg",
+      "estate_title": "Single-Family Home ",
+      "segment_name": "Family Homes",
+      "description": "This charming single-family home in Baridhara is perfect for a growing family. It features a private garden, a garage, and a playground, providing ample space for children to play and for adults to unwind. The neighborhood is peaceful and family-friendly.",
+      "price": "6000000 BDT",
+      "Status": "sale",
+      "Area": "800 sq ft",
+      "location": "Baridhara, Dhaka, Bangladesh",
+      "facilities": ["private garden", "garage", "playground"]
+    },
+    {
+      "id": 7,
+      "image": "https://i.postimg.cc/sXZGF2pp/estate-img-7.jpg",
+      "estate_title": "Significant Townhouse ",
+      "segment_name": "Townhouses",
+      "description": "Located in the bustling area of Motijheel, this townhouse offers spacious living with easy access to the city's business hub. The property includes a terrace, gym, and community hall, making it perfect for professionals who value both work and leisure.",
+      "price": "25000000 BDT",
+      "Status": "rent",
+      "Area": "4000 sq ft",
+      "location": "Motijheel, Dhaka, Bangladesh",
+      "facilities": ["terrace", "gym", "community hall"]
+    },
+    {
+      "id": 8,
+      "image": "https://i.postimg.cc/sxYBX0Hx/estate-img-8.jpg",
+      "estate_title": "Elegant Duplex Home",
+      "segment_name": "Single-Family Homes",
+      "description": "This elegant duplex in Uttara is designed for luxury living. It features a rooftop garden, home office, and jacuzzi, offering a perfect blend of comfort and style. The property is located in a prime area, making it a great investment opportunity.",
+      "price": "18000000 BDT",
+      "Status": "sale",
+      "Area": "3000 sq ft",
+      "location": "Uttara, Dhaka, Bangladesh",
+      "facilities": ["rooftop garden", "home office", "swimming pool"]
+    },
+    {
+      "id": 9,
+      "image": "https://i.postimg.cc/ZKmBg40d/estate-img-9.jpg",
+      "estate_title": "Beachfront Vacation Rental ",
+      "segment_name": "Vacation Rentals",
+      "description": "Experience the ultimate beachfront lifestyle with this vacation rental in Kuakata. With private beach access, a barbecue area, and outdoor dining, it’s the perfect spot for a relaxing holiday with family and friends.",
+      "price": "22000000 BDT",
+      "Status": "sale",
+      "Area": "2800 sq ft",
+      "location": "Kuakata, Bangladesh",
+      "facilities": ["private beach access", "barbecue area", "outdoor dining"]
+    }
+  ]
+  

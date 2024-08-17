@@ -1,13 +1,14 @@
 import Banner from "../../components/Banner/Banner";
+import EstatePart from "../../components/EstatePart/EstatePart";
 
 
 const Home = () => {
     return (
         <div className="">
-            <div className="">
+          
               <Banner></Banner>
-            </div>
-            <h2 className="text-3xl">This is Home</h2>
+              <EstatePart></EstatePart>
+           
         </div>
     );
 };
