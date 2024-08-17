@@ -6,10 +6,13 @@ import Footer from "../components/Shared/Footer/Footer";
 const Root = () => {
     return (
         <div>
+           
+
+           <div className="max-w-6xl mx-auto">
             <Navbar></Navbar>
-            <div className="max-w-6xl mx-auto font-poppins">
-               <Outlet></Outlet>
-            </div>
+             <Outlet></Outlet>
+           </div>
+
             <Footer></Footer>
         </div>
     );
