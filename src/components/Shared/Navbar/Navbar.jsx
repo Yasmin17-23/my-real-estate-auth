@@ -38,7 +38,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <p className="text-xl">Dream <br /> <span className="md:ml-6 text-lg">Estate</span></p>
+                <p className="text-xl">Dream <br /> <span className="md:ml-6 text-lg text-red-400">Estate</span></p>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -60,7 +60,7 @@ const Navbar = () => {
                                 <ul
                                     tabIndex={0}
                                     className="menu menu-sm dropdown-content rounded-box 
-                                     mt-28 mr-6 w-48 p-2 ">
+                                     mt-16 ml-12 w-48 p-2 ">
                                     <li className=" ">
                                         <a className="text-gray-600 ">
                                            {user.displayName}  

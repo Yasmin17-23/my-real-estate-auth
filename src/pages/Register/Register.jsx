@@ -1,21 +1,36 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import PageTitle from "../../components/PageTitle/PageTitle";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+    
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-       const { email, password } = data;
+       const { email, password, name, photo } = data;
        createUser(email, password)
-       .then(result => {
-         console.log(result.user);
-          toast.success('Successfully Register');
+       .then(() => {
+        toast.success('Successfully Register');
+        updateUserProfile(name, photo).then(() => {
+            navigate(location?.state ? location.state : "/");
+
+        })
+        //console.log(result.user);
+       
+
+       // navigate("/");
+        
+        
        })
        .catch(error => {
          console.error(error);
@@ -38,6 +53,7 @@ const Register = () => {
 
     return (
         <div className="hero min-h-screen mt-6">
+            <PageTitle title="Register Page"></PageTitle>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left lg:ml-4">
                     <h1 className="text-5xl font-bold text-green-900">Please Register</h1>
@@ -71,15 +87,22 @@ const Register = () => {
                             <input type="text" placeholder="Photo URL" className="input input-bordered"
                                 {...register("photo")} />
                         </div>
-                        <div className="form-control">
+                        <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="password" className="input input-bordered"
+                            <input type={showPassword ? "text" : "password"} 
+                            placeholder="password" 
+                            className="input input-bordered "
                                 {...register("password", {
                                     required: true, validate: passwordValidation
                                 })} />
-                           
+                             <span className="absolute top-12 ml-72" onClick={() => setShowPassword(!showPassword)}>
+                                {
+                                    showPassword ? <FaEyeSlash></FaEyeSlash> :
+                                                 <FaEye></FaEye>
+                                }
+                             </span>
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>

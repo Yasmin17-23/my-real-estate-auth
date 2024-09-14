@@ -1,33 +1,38 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 
 
 const Login = () => {
-   const { signInUser } = useContext(AuthContext);
-   
+    const { signInUser } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
-   const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-       const { email, password } = data;
-       signInUser(email, password)
-       .then(result => {
-         console.log(result.user);
-          toast.success('Successfully Logged in');
-       })
-       .catch(error => {
-         console.error(error);
-         toast.warning(error.message);
-       })
+        const { email, password } = data;
+        signInUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                toast.success('Successfully Logged in');
+                
+                navigate(location?.state ? location.state : "/");
+            })
+            .catch(error => {
+                console.error(error);
+                toast.warning(error.message);
+            })
     };
 
     return (
         <div className="hero min-h-screen">
+            <PageTitle title="Login Page"></PageTitle>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left lg:ml-4">
                     <h1 className="text-5xl font-bold text-blue-900">Please Login</h1>
@@ -42,16 +47,16 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="email" className="input input-bordered" 
-                               {...register("email", { required: true })} />
+                            <input type="email" placeholder="email" className="input input-bordered"
+                                {...register("email", { required: true })} />
                             {errors.name && <span>This field is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="password" className="input input-bordered" 
-                            {...register("password", { required: true })} />
+                            <input type="password" placeholder="password" className="input input-bordered"
+                                {...register("password", { required: true })} />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
@@ -65,8 +70,8 @@ const Login = () => {
                             </Link>
                         </p>
 
-                    </form> 
-                  <SocialMedia></SocialMedia>
+                    </form>
+                    <SocialMedia></SocialMedia>
                 </div>
             </div>
         </div>
