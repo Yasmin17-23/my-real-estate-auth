@@ -5,11 +5,11 @@ const Footer = () => {
     return (
         <div className="footer bg-[#5B99C2] p-10 font-poppins text-white inline-block">
 
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex flex-col lg:flex-row  justify-between lg:items-center px-8 mb-4">
                 <div>
                     <p className="text-xl">
                         Dream <br />
-                        <span className="ml-4"> Estate</span>
+                        <span className="ml-4 text-red-400"> Estate</span>
 
                     </p>
                     <br />
@@ -50,9 +50,9 @@ const Footer = () => {
             </div>
             <hr />
 
-            <div className="flex justify-between items-center mb-4 mr-2">
+            <div className="flex flex-col md:flex-row justify-between items-center mb-4 mr-2">
                 <div>
-                  <p className="text-xl mt-4">©DreamEstate2024 || All Rights Reserved</p>
+                  <p className="lg:text-xl mt-4 ">©DreamEstate2024 || All Rights Reserved</p>
                 </div>
                 <div className="flex items-center mt-4">
                     <h6 className="mr-3">Terms & Condition</h6>

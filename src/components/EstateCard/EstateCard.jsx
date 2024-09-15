@@ -9,7 +9,7 @@ const EstateCard = ({ estate }) => {
   const { id, image, estate_title, segment_name, location, Area, Status} = estate;
   
   return (
-    <div className="card bg-base-100 shadow-xl p-3 ">
+    <div className="card bg-gray-400 shadow-xl p-3 sm:pl-4">
       <figure>
         <img
           src={image}

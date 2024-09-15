@@ -3,12 +3,14 @@ import EstatePart from "../../components/EstatePart/EstatePart";
 import PageTitle from "../../components/PageTitle/PageTitle";
 
 
+
+
 const Home = () => {
     return (
-        <div className="">
-              <PageTitle title="Home"></PageTitle>
-              <Banner></Banner>
-              <EstatePart></EstatePart>
+        <div className="max-w-6xl mx-auto pl-4 lg:px-6">
+              <PageTitle title="Home"></PageTitle> 
+             <Banner></Banner>    
+            <EstatePart></EstatePart>
            
         </div>
     );
